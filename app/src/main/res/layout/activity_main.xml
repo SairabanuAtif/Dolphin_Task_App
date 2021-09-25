@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view_top_bg"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/top_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/profile"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_top_bg"
+        app:layout_constraintStart_toStartOf="@+id/view_top_bg"
+        app:layout_constraintTop_toTopOf="@+id/view_top_bg" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_round_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/view_top_bg"
+        app:layout_constraintStart_toStartOf="@+id/view_top_bg"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile">
+
+        <ImageView
+            android:id="@+id/iv_profile_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_pic" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_profile_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_profile_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <ImageView
+        android:id="@+id/iv_edit_profile_pic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@drawable/edit_profile_ic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_profile_horizontal"
+        app:layout_constraintStart_toEndOf="@id/guideline_profile_vertical" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/user_name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_top_bg"
+        app:layout_constraintStart_toStartOf="@+id/view_top_bg"
+        app:layout_constraintTop_toBottomOf="@+id/cv_round_image" />
+
+    <TextView
+        android:id="@+id/tv_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/user_id"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_account_details"
+        app:layout_constraintEnd_toEndOf="@+id/view_top_bg"
+        app:layout_constraintStart_toStartOf="@+id/view_top_bg"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_account_details"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_top_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_top_bg" />
+
+    <View
+        android:id="@+id/view_vertical_line"
+        android:layout_width="1dp"
+        android:layout_height="45dp"
+        android:background="@color/light_grey"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_account_details"
+        app:layout_constraintEnd_toEndOf="@+id/cv_account_details"
+        app:layout_constraintStart_toStartOf="@+id/cv_account_details"
+        app:layout_constraintTop_toTopOf="@+id/cv_account_details" />
+
+    <TextView
+        android:id="@+id/tv_acc_user_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="2sp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/user_name"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_account_details"
+        app:layout_constraintEnd_toStartOf="@+id/view_vertical_line"
+        app:layout_constraintStart_toStartOf="@+id/cv_account_details"
+        app:layout_constraintTop_toTopOf="@+id/cv_account_details" />
+
+    <TextView
+        android:id="@+id/tv_acc_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:elevation="2sp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/phone"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_acc_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_acc_user_name" />
+
+    <TextView
+        android:id="@+id/tv_available_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:elevation="2sp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/available_balance"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_account_details"
+        app:layout_constraintEnd_toEndOf="@+id/cv_account_details"
+        app:layout_constraintStart_toEndOf="@+id/view_vertical_line"
+        app:layout_constraintTop_toTopOf="@+id/cv_account_details" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2sp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/tv_available_balance"
+        app:layout_constraintStart_toStartOf="@+id/tv_available_balance"
+        app:layout_constraintTop_toBottomOf="@+id/tv_available_balance">
+        <ImageView
+            android:id="@+id/iv_rupees"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/img"
+            android:elevation="2dp"
+            android:src="@mipmap/gray_rupee_ic" />
+
+        <TextView
+            android:id="@+id/tv_balance_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/rupees"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_commission"
+        android:layout_width="match_parent"
+        android:layout_height="345dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_account_details" />
+    <!--commission-->
+    <ImageView
+        android:id="@+id/iv_commission"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/commission_details_ic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_account_details" />
+
+    <TextView
+        android:id="@+id/tv_commission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/commission"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_commission"
+        app:layout_constraintStart_toEndOf="@id/iv_commission"
+        app:layout_constraintTop_toTopOf="@+id/iv_commission" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_commission"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_commission" />
+
+    <!--Privacy-->
+    <ImageView
+        android:id="@+id/iv_privacy"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/privacy_security"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_commission" />
+
+    <TextView
+        android:id="@+id/tv_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/privacy"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_privacy"
+        app:layout_constraintStart_toEndOf="@id/iv_privacy"
+        app:layout_constraintTop_toTopOf="@+id/iv_privacy" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_privacy"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_privacy" />
+
+
+    <!--Complaint-->
+    <ImageView
+        android:id="@+id/iv_complaint"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/complaint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_privacy" />
+
+    <TextView
+        android:id="@+id/tv_complaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/complaint"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_complaint"
+        app:layout_constraintStart_toEndOf="@id/iv_complaint"
+        app:layout_constraintTop_toTopOf="@+id/iv_complaint" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_complaint"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_complaint" />
+
+    <!--KYC-->
+    <ImageView
+        android:id="@+id/iv_kyc"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/kyc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_complaint" />
+
+    <TextView
+        android:id="@+id/tv_kyc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/kyc"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_kyc"
+        app:layout_constraintStart_toEndOf="@id/iv_kyc"
+        app:layout_constraintTop_toTopOf="@+id/iv_kyc" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_kyc"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_kyc" />
+    <!--virtual-->
+    <ImageView
+        android:id="@+id/iv_virtual"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/virtual"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_kyc" />
+
+    <TextView
+        android:id="@+id/tv_virtual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/virtual"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_virtual"
+        app:layout_constraintStart_toEndOf="@id/iv_virtual"
+        app:layout_constraintTop_toTopOf="@+id/iv_virtual" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_virtual"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_virtual" />
+    <!--Offers-->
+    <ImageView
+        android:id="@+id/iv_offers"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/offers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_virtual" />
+
+    <TextView
+        android:id="@+id/tv_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/offers"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_offers"
+        app:layout_constraintStart_toEndOf="@id/iv_offers"
+        app:layout_constraintTop_toTopOf="@+id/iv_offers" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_offers"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_offers" />
+
+    <!--TDS-->
+    <ImageView
+        android:id="@+id/iv_tds"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/tds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_offers" />
+
+    <TextView
+        android:id="@+id/tv_tds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/tds"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_tds"
+        app:layout_constraintStart_toEndOf="@id/iv_tds"
+        app:layout_constraintTop_toTopOf="@+id/iv_tds" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tds"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_tds" />
+
+    <!--authorised-->
+    <ImageView
+        android:id="@+id/iv_authorised"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/authorised"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_tds" />
+
+    <TextView
+        android:id="@+id/tv_authorised"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="16dp"
+        android:paddingEnd="5dp"
+        android:text="@string/authorised"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_authorised"
+        app:layout_constraintStart_toEndOf="@id/iv_authorised"
+        app:layout_constraintTop_toTopOf="@+id/iv_authorised" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img"
+        android:elevation="2dp"
+        android:src="@mipmap/left_arrow_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_authorised"
+        app:layout_constraintEnd_toEndOf="@+id/cv_commission"
+        app:layout_constraintTop_toTopOf="@id/tv_authorised" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

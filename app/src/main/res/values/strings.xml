@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Bill Payment</string>
+    <string name="profile">Profile</string>
+    <string name="user_name">Anand Shivaji Kaushal</string>
+    <string name="user_id">RT10190</string>
+    <string name="phone">9619734020</string>
+    <string name="available_balance">Available Balance</string>
+    <string name="commission">Commission Details</string>
+    <string name="privacy">Privacy &amp; Security</string>
+    <string name="complaint">Complaint Box</string>
+    <string name="kyc">KYC</string>
+    <string name="virtual">Virtual Amount</string>
+    <string name="offers">Offers &amp; Notices</string>
+    <string name="tds">TDS Certificate</string>
+    <string name="authorised">Authorized Certificate</string>
+    <string name="img">image</string>
+    <string name="rupees">5210.40</string>
+</resources>

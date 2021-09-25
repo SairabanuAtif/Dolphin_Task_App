@@ -1,0 +1,2 @@
+rootProject.name = "Dolphin App"
+include ':app'
